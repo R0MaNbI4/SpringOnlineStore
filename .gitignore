@@ -1,0 +1,15 @@
+*.puml
+/*/*
+!.gitignore
+!/*/HW
+/*/HW/.jpb/*
+/*/HW/.idea/*
+/*/HW/.mvn/*
+/*/HW/mvnw
+/*/HW/mvnw.cmd
+/*/HW/target/*
+/*/HW/*.iml
+/*/HW/gradle/*
+/*/HW/gradlew
+/*/HW/gradlew.bat
+/*/HW/settings.gradle
