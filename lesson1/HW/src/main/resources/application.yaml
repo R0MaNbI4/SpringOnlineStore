@@ -1,0 +1,13 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:spring-data-db;MODE=PostgreSQL
+    username: admin
+    password: admin
+  jpa:
+    show-sql: true
+  h2:
+    console:
+      enabled: true

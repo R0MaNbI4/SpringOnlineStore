@@ -1,0 +1,105 @@
+html {
+    overflow-y: scroll;
+}
+
+#navbarSupportedContent {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#logout, #login {
+    justify-self: flex-end;
+    border: 0;
+    /*background-color: #f8f9fa;*/
+}
+
+#navbar {
+    margin-bottom: 10px;
+}
+
+.card-body .custom__row {
+    display: flex;
+    justify-content: space-between;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: "PT Sans","Helvetica","Arial",sans-serif;
+}
+
+.product-list .card img {
+    height: 200px;
+    padding: 5px 0;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-title {
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 40px;
+    color: #000;
+}
+
+.product-price {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+}
+
+.product-article {
+    font-size: 16px;
+    color: #aaa;
+}
+
+.product-list .product-article {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 5px;
+}
+
+.add-form .mb-3 {
+    margin-top: 18px;
+}
+
+#addFormResetButton,
+#filterFormResetButton {
+    margin-top: 5px;
+}
+
+.add-form .buttons .btn,
+.filter-form .buttons .btn {
+    width: 40%;
+    margin: 0 30%;
+}
+
+.custom__form-label {
+
+}
+
+.card-body .buttons {
+    display: flex;
+}
+
+.card-body .btn {
+    margin: 0 3px;
+}
+
+.product-info .img-container {
+    padding: 5px;
+}
+
+.product-info .product-title {
+    margin: 10px 20px;
+}
+
+.product-info .card-body {
+    padding-left: 50px;
+}
