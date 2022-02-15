@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:include="fragments/common-head">
+    <title th:text="product.title"></title>
+</head>
+<body>
+    <nav th:replace="fragments/nav-bar::nav-bar"></nav>
+    <div class="container product-info">
+        <div th:object="${product}" class="card mb-3" style="max-width: 1000px; margin: 0 auto">
+            <div class="row g-0">
+                <h5 th:text="${product.title}" class="card-title product-title">Card title</h5>
+                <div class="col-md-4 img-container">
+                    <img th:src="${product.imageUrl}" class="img-fluid rounded-start" th:alt="#{product.image.alt}">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <div class="custom__row">
+
+                        </div>
+                        <div class="custom__row">
+                            <h5 th:text="${product.price} + ' ' + &#8381;" class="card-title product-price"></h5>
+                        </div>
+                        <p th:text="'Производитель:' + *{brand}" class="card-text"></p>
+                        <p th:text="'Модель:' + *{model}" class="card-text"></p>
+                        <p th:text="#{product.info.color} + ': ' + (${#strings.isEmpty(product.color)} ? #{product.info.unknown} : ${product.color})" class="card-text"></p>
+
+                        <div class="buttons">
+                            <form sec:authorize="hasAnyRole('ADMIN', 'MANAGER')" method="post" th:action="@{${'/products/delete/' + product.id}}">
+                                <button th:text="#{button.delete}" type="submit" class="btn btn-danger"></button>
+                            </form>
+                            <form sec:authorize="hasAnyRole('ADMIN', 'MANAGER')" method="get" th:action="@{${'/products/update/' + product.id}}">
+                                <button th:text="#{button.update}" type="submit" class="btn btn-secondary"></button>
+                            </form>
+
+                            <button th:attr="data-product-id=${product.id}" class="btn btn-primary" onclick="onClickAddToCart(this)">
+                                В корзину
+                            </button>
+                        </div>
+                        <p th:text="#{product.info.article} + ${': '} + ${product.article}" class="card-text product-article"><small class="text-muted"></small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
